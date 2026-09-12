@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IvyRadar — Full-Stack Platform Case Study | Muhammad Bilal</title>
+<meta name="description" content="How I built core features of IvyRadar, a full-stack information and social platform for education, investing and AI insights, including its admin moderation dashboard.">
+<link rel="canonical" href="https://bilaltoor.online/project-ivyradar.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#10141B">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Muhammad Bilal — bilaltoor.online">
+<meta property="og:title" content="IvyRadar — Full-Stack Platform Case Study | Muhammad Bilal">
+<meta property="og:description" content="How I built core features of IvyRadar, a full-stack information and social platform for education, investing and AI insights, including its admin moderation dashboard.">
+<meta property="og:url" content="https://bilaltoor.online/project-ivyradar.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bilaltoor.online/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IvyRadar — Full-Stack Platform Case Study | Muhammad Bilal">
+<meta name="twitter:description" content="How I built core features of IvyRadar, a full-stack information and social platform for education, investing and AI insights, including its admin moderation dashboard.">
+<meta name="twitter:image" content="https://bilaltoor.online/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html#top" class="mark">bilal<b>.</b>dev</a>
+    <nav id="navDesktop">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/muhammadbilaltoor" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/923069055247" target="_blank" rel="noopener" aria-label="Message on WhatsApp" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </div>
+      <a href="mailto:muhammadbilaltoor7@gmail.com" class="cta">
+        <i class="fa-brands fa-github cta-icon" aria-hidden="true"></i>
+        Get in touch
+      </a>
+      <button class="navtoggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <div class="nav-top">
+    <a href="index.html#top" class="mark">bilal<b>.</b>dev</a>
+    <button class="navclose" aria-label="Close menu">✕</button>
+  </div>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="social-icons nav-overlay-socials" aria-label="Social links">
+    <a href="https://www.linkedin.com/in/muhammadbilaltoor" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+    </a>
+    <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+    </a>
+    <a href="https://wa.me/923069055247" target="_blank" rel="noopener" aria-label="Message on WhatsApp" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+  </div>
+  <a href="mailto:muhammadbilaltoor7@gmail.com" class="nav-cta">Get in touch</a>
+</div>
+<a href="index.html#top" class="sticky-avatar" id="stickyAvatar" aria-label="Back to top">
+  <img src="assets/portrait.jpg" alt="" loading="lazy">
+</a>
+
+
+<main>
+  <section class="pd-hero">
+    <div class="wrap">
+      <a href="index.html#projects" class="back">← All projects</a>
+      <div class="kicker">Global · Platform · MERN stack</div>
+      <h1>IvyRadar</h1>
+      <p class="tagline">A full-stack information and social platform bringing together education, investing, and AI-driven insights — built on the MERN stack with a dedicated moderation dashboard for the content behind it.</p>
+
+      <div class="pd-meta">
+        <div class="cell"><div class="k">role</div><div class="v">Full-Stack Developer</div></div>
+        <div class="cell"><div class="k">stack</div><div class="v">MongoDB, Express.js, React, Node.js</div></div>
+        <div class="cell"><div class="k">duration</div><div class="v">Feb 2025 – May 2025</div></div>
+        <div class="cell"><div class="k">live at</div><div class="v"><a href="https://ivyradar.com" target="_blank" rel="noopener">ivyradar.com</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pd-body">
+    <div class="wrap cols">
+      <div class="pd-block">
+        <h3>The problem</h3>
+        <p>IvyRadar set out to be a single place for content spanning education, investing, and AI-driven insights — three subject areas that normally live on three different sites. That meant the platform needed a flexible content model, a way to keep quality and moderation consistent across very different content types, and a UI that didn't feel bolted together.</p>
+
+        <h3>What I built</h3>
+        <ul>
+          <li>Core platform features on the MERN stack, from data model through to the user-facing interface.</li>
+          <li>An admin dashboard purpose-built for content moderation, user management, and day-to-day data oversight — the internal tool the team actually runs the platform through.</li>
+          <li>API endpoints and database schema designed alongside the rest of the team to support a content-heavy, multi-category platform without the data model becoming a bottleneck.</li>
+        </ul>
+      </div>
+
+      <div class="pd-block">
+        <h3>Approach</h3>
+        <ul>
+          <li>Treated the admin dashboard as a first-class product surface, not an afterthought — moderation and user-management tools that are actually usable day to day directly affect content quality on a platform like this.</li>
+          <li>Worked schema-first on the database design so new content types (education vs. investing vs. AI insights) could be added without repeated migrations.</li>
+          <li>Kept the API layer collaborative with the rest of the team, since a content-heavy platform lives or dies on how well the backend and frontend agree on shape early.</li>
+        </ul>
+
+        <h3>Outcome</h3>
+        <p>A working platform with distinct content verticals under one roof, backed by an admin dashboard that gives the team direct control over moderation and data — the piece that keeps a multi-topic platform manageable as it grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pd-cta">
+    <div class="wrap">
+      <div class="box">
+        <div>
+          <h3>Want more detail on the data model or dashboard?</h3>
+          <p>Happy to walk through the schema design or the moderation tooling specifically.</p>
+        </div>
+        <a href="mailto:muhammadbilaltoor7@gmail.com" class="btn btn-primary">Email me</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span data-year></span> Muhammad Bilal · <a href="https://bilaltoor.online" target="_blank" rel="noopener">bilaltoor.online</a></p>
+    <a href="index.html#top" class="back">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
