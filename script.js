@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   var featuredProjects = [
-    ['Meat Sales Online Platform','Full Stack e-commerce platform for a meat sales business','2024','Full stack','assets/projects/project-1/image-1.webp',['React.js','Node.js','MongoDB']],
-    ['Fish Sales Company Website','Italian seafood e-commerce experience with localised customer journeys.','2024','Frontend','assets/projects/project-2/image-1.webp',['Vue.js','Quasar','Tailwind']],
-    ['Tennis Booking System','Responsive booking interface for tennis courts and availability.','2023','Frontend','assets/projects/project-3/image-1.webp',['React.js','Redux','Bootstrap']],
-    ['Curly Hair Salon Website','Premium salon experience with booking, products and customer stories.','2023','Frontend','assets/projects/project-4/image-1.webp',['HTML','CSS','JavaScript']],
-    ['Doctor Medical Website','Accessible medical-practice website with clear patient-first journeys.','2023','Frontend','assets/projects/project-5/image-1.webp',['React.js','Tailwind','Firebase']],
-    ['E-Selling Marketing Platform','Data-led marketing platform for e-commerce businesses.','2022','Frontend','assets/projects/project-6/image-1.webp',['Next.js','React','TypeScript']],
-    ['Palmy Fan Engagement','Live-event fan engagement product built for interaction and loyalty.','2025','Full stack','assets/projects/project-7/image-1.webp',['Nuxt.js','Prisma','Socket.io']],
-    ['Agent Readiness Scanner','AI visibility scanner with actionable website optimisation insights.','2025','Frontend','assets/projects/project-8/image-1.webp',['React.js','Vite','Stripe']],
-    ['Air Connect','MERN facilitation portal for students, teachers and campus staff.','2025','Full stack','assets/projects/project-9/image-1.webp',['React.js','Node.js','MongoDB']]
+    ['Meat Sales Online Platform','Full Stack e-commerce platform for a meat sales business','2024','Full stack','assets/projects/project-1/image-1.webp',['React.js','Node.js','MongoDB'],'project.html?id=meat-sales'],
+    ['Fish Sales Company Website','Italian seafood e-commerce experience with localised customer journeys.','2024','Frontend','assets/projects/project-2/image-1.webp',['Vue.js','Quasar','Tailwind'],'project.html?id=fish-sales'],
+    ['Tennis Booking System','Responsive booking interface for tennis courts and availability.','2023','Frontend','assets/projects/project-3/image-1.webp',['React.js','Redux','Bootstrap'],'project.html?id=tennis-booking'],
+    ['Curly Hair Salon Website','Premium salon experience with booking, products and customer stories.','2023','Frontend','assets/projects/project-4/image-1.webp',['HTML','CSS','JavaScript'],'project.html?id=curly-hair'],
+    ['Doctor Medical Website','Accessible medical-practice website with clear patient-first journeys.','2023','Frontend','assets/projects/project-5/image-1.webp',['React.js','Tailwind','Firebase'],'project.html?id=doctor-website'],
+    ['E-Selling Marketing Platform','Data-led marketing platform for e-commerce businesses.','2022','Frontend','assets/projects/project-6/image-1.webp',['Next.js','React','TypeScript'],'project.html?id=marketing-platform'],
+    ['Palmy Fan Engagement','Live-event fan engagement product built for interaction and loyalty.','2025','Full stack','assets/projects/project-7/image-1.webp',['Nuxt.js','Prisma','Socket.io'],'project.html?id=palmy'],
+    ['Agent Readiness Scanner','AI visibility scanner with actionable website optimisation insights.','2025','Frontend','assets/projects/project-8/image-1.webp',['React.js','Vite','Stripe'],'project.html?id=agent-readiness-scanner'],
+    ['Air Connect','MERN facilitation portal for students, teachers and campus staff.','2025','Full stack','assets/projects/project-9/image-1.webp',['React.js','Node.js','MongoDB'],'project.html?id=air-connect']
   ];
   var calculatorProjects = [
     ['Kalkulator Jadian','Relationship milestone tracker and anniversary calculator','Indonesia','https://kalkulator-jadian-invented.vercel.app/','https://ikalkulatorjadian.id/og-1200x630.webp'],
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return '<article class="project-card"><a class="project-thumb" href="' + href + '" target="_blank" rel="noopener" aria-label="Open ' + title + '"><img src="' + image + '" alt="Screenshot of ' + title + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallback + '\';"><span class="project-kind">' + kind + '</span><span class="project-open" aria-hidden="true">↗</span></a><div class="project-content"><h3>' + title + '</h3><div class="project-meta">' + meta + '</div><p>' + text + '</p><div class="project-tags">' + tags.map(function(tag){return '<span>' + tag + '</span>';}).join('') + '</div><a class="project-link" href="' + href + '" target="_blank" rel="noopener">View live project &rarr;</a></div></article>';
   }
   var featuredTarget = document.getElementById('featuredProjects');
-  if (featuredTarget) featuredTarget.innerHTML = featuredProjects.map(function(project) { return card(project[0], project[1], project[2], project[3], project[4], project[5], project[6] || 'https://github.com/Bilaltoor1'); }).join('');
+  if (featuredTarget) featuredTarget.innerHTML = featuredProjects.map(function(project) { return card(project[0], project[1], project[2], project[3], project[4], project[5], project[6]); }).join('');
   var calculatorTarget = document.getElementById('calculatorProjects');
   if (calculatorTarget) {
     calculatorTarget.innerHTML = calculatorProjects.map(function(project) { var ogImage = project[4] || project[3].replace(/\/$/, '') + '/opengraph-image'; return card(project[0], project[1], project[2], 'Calculator', ogImage, ['Next.js', 'Calculator', project[2]], project[3]); }).join('');
