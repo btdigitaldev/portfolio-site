@@ -1,4 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var featuredProjects = [
+    ['Meat Sales Online Platform','Full Stack e-commerce platform for a meat sales business','2024','Full stack','assets/projects/project-1/image-1.webp',['React.js','Node.js','MongoDB']],
+    ['Fish Sales Company Website','Italian seafood e-commerce experience with localised customer journeys.','2024','Frontend','assets/projects/project-2/image-1.webp',['Vue.js','Quasar','Tailwind']],
+    ['Tennis Booking System','Responsive booking interface for tennis courts and availability.','2023','Frontend','assets/projects/project-3/image-1.webp',['React.js','Redux','Bootstrap']],
+    ['Curly Hair Salon Website','Premium salon experience with booking, products and customer stories.','2023','Frontend','assets/projects/project-4/image-1.webp',['HTML','CSS','JavaScript']],
+    ['Doctor Medical Website','Accessible medical-practice website with clear patient-first journeys.','2023','Frontend','assets/projects/project-5/image-1.webp',['React.js','Tailwind','Firebase']],
+    ['E-Selling Marketing Platform','Data-led marketing platform for e-commerce businesses.','2022','Frontend','assets/projects/project-6/image-1.webp',['Next.js','React','TypeScript']],
+    ['Palmy Fan Engagement','Live-event fan engagement product built for interaction and loyalty.','2025','Full stack','assets/projects/project-7/image-1.webp',['Nuxt.js','Prisma','Socket.io']],
+    ['Agent Readiness Scanner','AI visibility scanner with actionable website optimisation insights.','2025','Frontend','assets/projects/project-8/image-1.webp',['React.js','Vite','Stripe']],
+    ['Air Connect','MERN facilitation portal for students, teachers and campus staff.','2025','Full stack','assets/projects/project-9/image-1.webp',['React.js','Node.js','MongoDB']]
+  ];
+  var calculatorProjects = [
+    ['Kalkulator Jadian','Relationship milestone tracker and anniversary calculator','Indonesia','https://kalkulator-jadian-invented.vercel.app/','https://ikalkulatorjadian.id/og-1200x630.webp'],
+    ['Contador de Dias','Online day counter for date differences and countdowns','Brazil','https://day-calculator-mu.vercel.app/','https://icontadordedias.com.br/og.webp'],
+    ['Yaş Hesaplama','Turkish age calculator based on birth year','Turkey','https://age-calculator-chi-blond.vercel.app/'],
+    ['Kredi Hesaplama','Small-business loan payment and eligibility calculator','Turkey','https://turkish-small-business-loan-calcula.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Fturkish-small-business-loan-calcula.vercel.app%2F?w=1200'],
+    ['Calculadora do Período de Fertilidade','Fertility-period calculator','Brazil','https://fertility-period-calculator-khaki.vercel.app/'],
+    ['Calcular RFC México','Mexican RFC tax-ID estimation calculator','Mexico','https://rfc-calculator.vercel.app/'],
+    ['Generador de Notas','Chilean grade scale generator and calculator','Chile','https://grade-generator-for-chilean-grade-a.vercel.app/'],
+    ['Calculadora de Alquiler','Rental update and adjustment calculator','Argentina','https://rental-calculator-ecru.vercel.app/'],
+    ['Calculadora Horas Trabalhadas','Worked-hours and overtime calculator','Brazil','https://calculadora-horas-trabalhadas-seven.vercel.app/'],
+    ['Kalkulator Hari','Date and day calculator','Indonesia','https://day-calculator-gttw.vercel.app/','https://www.kalkulatorhari.com/images/brand-og.webp'],
+    ['Calculadora ISR','Income-tax calculator','Mexico','https://isr-calculator-navy.vercel.app/'],
+    ['Calculadora Seguro-Desemprego','Unemployment-insurance benefit calculator','Brazil','https://unemployment-insurance-calculator-five.vercel.app/'],
+    ['PayPal Gebührenrechner','PayPal fee calculator','Germany','https://pay-pal-fee-calculator-snowy.vercel.app/'],
+    ['Kalkulator Paliwa','Fuel cost, consumption and trip planner','Poland','https://fuel-calculator-kappa.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Ffuel-calculator-kappa.vercel.app%2F?w=1200'],
+    ['PawAge','Dog age to human-years calculator','Global','https://pawage.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Fpawage.vercel.app%2F?w=1200'],
+    ['Calcolo IVA Italia','Italian VAT calculator','Italy','https://italian-vat-calculator.vercel.app/'],
+    ['Calculadora Salário Líquido','Brazilian net-salary calculator','Brazil','https://calculadora-salario-liquido-chi.vercel.app/'],
+    ['Tazminatı Hesaplama','Turkish severance-pay calculator','Turkey','https://tazminat-hesaplama.vercel.app/'],
+    ['Saat Hesaplama','Turkish time calculator','Turkey','https://turkish-time-calculator.vercel.app/'],
+    ['Calculadora UF Chile','Chilean UF currency calculator','Chile','https://uf-calculator.vercel.app/'],
+    ['Tapu Harcı Hesaplama','Turkish land-registry fee calculator','Turkey','https://turkish-land-registry-cal.vercel.app/'],
+    ['Calcolo Stipendio Netto','Italian net-salary calculator','Italy','https://net-salary-cal.vercel.app/'],
+    ['Calcul Heure en Ligne','French work-hour calculator','France','https://time-calculation-france.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Ftime-calculation-france.vercel.app%2F?w=1200'],
+    ['Kalkulator Procentowy','Polish percentage calculator','Poland','https://percentage-calculator-poland.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Fpercentage-calculator-poland.vercel.app%2F?w=1200'],
+    ['Bürgergeld Rechner','German citizen-benefit calculator','Germany','https://citizen-benefit.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Fcitizen-benefit.vercel.app%2F?w=1200'],
+    ['Datumsrechner','German date calculator and countdown tool','Germany','https://date-calculator-mauve.vercel.app/'],
+    ['Working Time Calculator','Work time and shift calculator','Global','https://working-time-calcu.vercel.app/'],
+    ['Attendance Calculator','Attendance percentage calculator','Global','https://attendance-calculator-puce.vercel.app/','https://s0.wp.com/mshots/v1/https%3A%2F%2Fattendance-calculator-puce.vercel.app%2F?w=1200'],
+    ['Arabic Spanish Converter','Arabic to Spanish conversion tool','Global','https://arabic-spanish-converter.vercel.app/'],
+    ['Calendrier Grossesse','Pregnancy calendar calculator','France','https://calendrier-grossesse-seven.vercel.app/']
+  ];
+  calculatorProjects = calculatorProjects.filter(function (project) {
+    return project[3] !== 'https://calculadora-salario-liquido-chi.vercel.app/';
+  });
+  function card(title, text, meta, kind, image, tags, href) {
+    var fallback = 'https://s0.wp.com/mshots/v1/' + encodeURIComponent(href) + '?w=1200';
+    return '<article class="project-card"><a class="project-thumb" href="' + href + '" target="_blank" rel="noopener" aria-label="Open ' + title + '"><img src="' + image + '" alt="Screenshot of ' + title + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallback + '\';"><span class="project-kind">' + kind + '</span><span class="project-open" aria-hidden="true">↗</span></a><div class="project-content"><h3>' + title + '</h3><div class="project-meta">' + meta + '</div><p>' + text + '</p><div class="project-tags">' + tags.map(function(tag){return '<span>' + tag + '</span>';}).join('') + '</div><a class="project-link" href="' + href + '" target="_blank" rel="noopener">View live project &rarr;</a></div></article>';
+  }
+  var featuredTarget = document.getElementById('featuredProjects');
+  if (featuredTarget) featuredTarget.innerHTML = featuredProjects.map(function(project) { return card(project[0], project[1], project[2], project[3], project[4], project[5], project[6] || 'https://github.com/Bilaltoor1'); }).join('');
+  var calculatorTarget = document.getElementById('calculatorProjects');
+  if (calculatorTarget) {
+    calculatorTarget.innerHTML = calculatorProjects.map(function(project) { var ogImage = project[4] || project[3].replace(/\/$/, '') + '/opengraph-image'; return card(project[0], project[1], project[2], 'Calculator', ogImage, ['Next.js', 'Calculator', project[2]], project[3]); }).join('');
+    calculatorTarget.querySelectorAll('.project-thumb img').forEach(function (image) {
+      var href = image.closest('.project-thumb').href.replace(/\/$/, '');
+      var fallbacks = [href + '/og.webp', href + '/og-image.webp', 'https://s0.wp.com/mshots/v1/' + encodeURIComponent(href) + '?w=1200'];
+      var fallbackIndex = 0;
+      image.addEventListener('error', function () { if (fallbackIndex < fallbacks.length) image.src = fallbacks[fallbackIndex++]; });
+    });
+  }
   var toggle = document.getElementById('navToggle');
   var overlay = document.getElementById('navOverlay');
   var closeBtn = overlay ? overlay.querySelector('.navclose') : null;
