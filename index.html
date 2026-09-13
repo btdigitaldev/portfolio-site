@@ -45,6 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <script type="application/ld+json">
 {
@@ -202,6 +203,10 @@
         </div>
         <div class="markets">
           <h3>Where my work ships</h3>
+          <div class="market-map" role="img" aria-label="World map showing work shipped to Pakistan, Mexico, Brazil, Chile, Indonesia, the United Kingdom, and the United States">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="" loading="lazy">
+            <span class="map-pin pin-pakistan" title="Pakistan"></span><span class="map-pin pin-mexico" title="Mexico"></span><span class="map-pin pin-brazil" title="Brazil"></span><span class="map-pin pin-chile" title="Chile"></span><span class="map-pin pin-indonesia" title="Indonesia"></span><span class="map-pin pin-uk" title="United Kingdom"></span><span class="map-pin pin-us" title="United States"></span>
+          </div>
           <ul>
             <li><span>Mexico — RFC tax-ID calculator</span><span>icalcularrfc.mx</span></li>
             <li><span>Indonesia — relationship-date calculator</span><span>ikalkulatorjadian.id</span></li>
@@ -297,12 +302,12 @@
         </div>
       </div>
 
-      <div class="stackline">
-        <div class="cat"><span class="k">frontend</span><span class="v">React.js, Next.js, Vue.js, JavaScript (ES6+), TypeScript, Tailwind CSS</span></div>
-        <div class="cat"><span class="k">backend</span><span class="v">Node.js, Express.js, FastAPI, RESTful APIs, Authentication &amp; Authorization</span></div>
-        <div class="cat"><span class="k">devops &amp; cloud</span><span class="v">AWS, Google Cloud Platform, Docker, Terraform, CI/CD basics, Vercel</span></div>
-        <div class="cat"><span class="k">databases</span><span class="v">MongoDB, PostgreSQL, Firebase, Supabase</span></div>
-        <div class="cat"><span class="k">seo &amp; performance</span><span class="v">Technical SEO, Google Search Console, Core Web Vitals, Sitemap &amp; Indexing Optimization, Schema Markup</span></div>
+      <div class="stackline" aria-label="Technology stack">
+        <div class="cat"><span class="k">frontend</span><div class="tech-list"><span><i class="devicon-react-original colored"></i>React.js</span><span><i class="devicon-nextjs-plain"></i>Next.js</span><span><i class="devicon-vuejs-plain colored"></i>Vue.js</span><span><i class="devicon-javascript-plain colored"></i>JavaScript (ES6+)</span><span><i class="devicon-typescript-plain colored"></i>TypeScript</span><span><i class="devicon-tailwindcss-original colored"></i>Tailwind CSS</span></div></div>
+        <div class="cat"><span class="k">backend</span><div class="tech-list"><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><span><i class="devicon-express-original"></i>Express.js</span><span><i class="devicon-fastapi-plain colored"></i>FastAPI</span><span><i class="fa-solid fa-code"></i>RESTful APIs</span><span><i class="fa-solid fa-shield-halved"></i>Authentication &amp; Authorization</span></div></div>
+        <div class="cat"><span class="k">devops &amp; cloud</span><div class="tech-list"><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span><span><i class="devicon-googlecloud-plain colored"></i>Google Cloud Platform</span><span><i class="devicon-docker-plain colored"></i>Docker</span><span><i class="devicon-terraform-plain colored"></i>Terraform</span><span><i class="fa-solid fa-arrows-rotate"></i>CI/CD basics</span><span><i class="devicon-vercel-original"></i>Vercel</span></div></div>
+        <div class="cat"><span class="k">databases</span><div class="tech-list"><span><i class="devicon-mongodb-plain colored"></i>MongoDB</span><span><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span><i class="devicon-firebase-plain colored"></i>Firebase</span><span><i class="devicon-supabase-plain colored"></i>Supabase</span></div></div>
+        <div class="cat"><span class="k">seo &amp; performance</span><div class="tech-list"><span><i class="fa-solid fa-magnifying-glass-chart"></i>Technical SEO</span><span><i class="fa-brands fa-google"></i>Google Search Console</span><span><i class="fa-solid fa-gauge-high"></i>Core Web Vitals</span><span><i class="fa-solid fa-sitemap"></i>Sitemap &amp; Indexing</span><span><i class="fa-solid fa-code"></i>Schema Markup</span></div></div>
       </div>
     </div>
   </section>
@@ -317,7 +322,11 @@
       </div>
     </div>
     <div class="wrap">
-      <div class="proj-grid">
+      <div class="project-section-title"><span>01 / Featured projects</span><p>Selected full-stack and frontend work</p></div>
+      <div class="project-grid project-grid-featured" id="featuredProjects"></div>
+      <div class="project-section-title calculators-title"><span>02 / Calculator products</span><p>International tools, live on Vercel</p></div>
+      <div class="project-grid calculator-grid" id="calculatorProjects"></div>
+      <div class="proj-grid" aria-hidden="true">
 
         <div class="proj-card">
           <div class="top"><h3>CalcularRFC</h3></div>
